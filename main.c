@@ -62,11 +62,11 @@ inline int generic_CodeA(int value){
        long "memory jump" when function call by short asm instructions. 
        ( good notion to have... )
     -> but "broke" the storage of the data structure (with fwrite),
-       since only a memory address can be fix in size,an know at write time,
+       since only a memory address can be fix in size,
        consecutives inlined assembly instructions at compile time 
        would involve to store an undifined number of asm instructions in
        the data structure, the size would not be possible to know by advance
-       for making an user config file. ( inportant to understand why )
+       at write time for making an user config file. ( inportant to understand why... )
 */
 
 int generic_CodeB(int value){
