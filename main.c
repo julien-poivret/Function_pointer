@@ -108,6 +108,6 @@ int main(int argc,char* argv[]){
 	struct data st_read;
 	fread(&st_read,sizeof(st),1,fd);
 	fclose(fd); 
-	printf("Data read code previously store in file.jp :%d\n",(st_read.runtime_code)(10));
+	printf("Data read code previously store in \"file.jp\" :%d\n",(st_read.runtime_code)(10));
 	return EXIT_SUCCESS;
 }
