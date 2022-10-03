@@ -111,7 +111,8 @@ int main(int argc,char* argv[]){
 		printf("Char 1 and 2 of the third item: %c,%c\n",
 		                          test[2][0],test[2][1]);   // 2d list.
 	}
-	// Walking the data structure with the previously embedded code:
+	// Walking the data structure with the previously linked code:
+	// can be anythings which fit input/output of the function pointer.
 	printf("Data structure a2 value: %.2f\n",st.a2);	
 
  	printf("Code routine Handling\n"
@@ -120,9 +121,9 @@ int main(int argc,char* argv[]){
 	               interrupt_routine(generic_CodeA,10),
 	               interrupt_routine(generic_CodeB,10));
 	
-	// Open a stream and save the data structure on a physical disk in an arbitrary '.jp' format.
-	// can be usefull for storing allocated memory on ram, before to free the ram previously allocated by os
-	// and so deal with an huge amount of data without crashing the computer that a swap memory.
+	// Open a stream and save the data structure on a physical disk in an arbitrary '.jp' or whatever format.
+	// can be usefull for storing allocated memory on ram, before to free the ram previously allocated by the OS
+	// and so deal with an huge amount of data without crashing the computer that's a swap memory managment.
 	FILE* fd = fopen("./myfile.jp","w+b");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
@@ -130,7 +131,7 @@ int main(int argc,char* argv[]){
 		}
 	fwrite(&st,sizeof(st),1,fd); // Write
 	fclose(fd); // close stream.
-        // Open the '.jp' file coresponding to the architecture of the data structure and run the stored struct data.
+        // Open the '.jp' file corresponding to the architecture of the data structure and run the stored struct data.
 	//     ( possibly a one generated from another computer and recived by email in .jp format ... )
 	fd = fopen("./myfile.jp","rb");
         if( fd == NULL ){
