@@ -95,7 +95,7 @@ int main(int argc,char* argv[]){
 		fprintf(stderr,"Error,cant openfile there.");
                 exit(EXIT_FAILURE);
 		}
-	fwrite(&st,sizeof(st),1,fd);
+	fwrite(&st,sizeof(st),1,fd); // write
 	fclose(fd); 
         // open the .jp file format and run the stored code.
 	// possibly generated from another computer and recived by email.
@@ -106,8 +106,9 @@ int main(int argc,char* argv[]){
                 exit(EXIT_FAILURE);
 		}
 	struct data st_read;
-	fread(&st_read,sizeof(st),1,fd);
+	fread(&st_read,sizeof(st),1,fd); // read
 	fclose(fd); 
 	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10));
+	
 	return EXIT_SUCCESS;
 }
