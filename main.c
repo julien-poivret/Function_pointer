@@ -17,7 +17,7 @@
     C is a powerfull language system but can also do Application User Interface too.
     -> now a function pointer can take variations of algorithm, by having a different code 
     within a given input/output function entry format, this could be a system file ! 
-    "see fwrite/fread function in C" for storing data structure in a file 
+    "see fwrite/fread function in C" for storing/reading data structure in a file 
     and choose your own extention format before writing/reading on disk neat! no ?
     ( !! only values must be set on a struct when you plane to store the structure in a config file !! )
     ( pointer would lead to segmentation fault in the next runtime. )  
