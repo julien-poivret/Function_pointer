@@ -58,7 +58,7 @@ inline int generic_CodeA(int value){
 };
 /*
     -> prefix "inline" speed up short function definition 
-       like the one following at compile time by replacing 
+       like the one above at compile time by replacing 
        long "memory jump" when function call by short asm instructions. 
        (good notion to have...)
     -> but "broke" the storage in data structure (with fwrite),
