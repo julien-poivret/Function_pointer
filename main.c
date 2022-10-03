@@ -53,7 +53,7 @@ int interrupt_routine(Callbck_t funct,int input){
   api inputs / output.
 */
 inline int generic_CodeA(int value){
-	//...some possible additional code config there...
+	//...some possible additional codes config there...
 	return (value+3); 
 };
 /*
@@ -67,7 +67,7 @@ inline int generic_CodeA(int value){
 */
 
 int generic_CodeB(int value){
-	//...some possible additional code config there...
+	//...some possible additional codes config there...
 	return (value+5); 
 };
 
