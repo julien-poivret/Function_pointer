@@ -92,7 +92,7 @@ int main(int argc,char* argv[]){
 		printf("Char 1 and 2 of the third item: %c,%c\n",
 		                          test[2][0],test[2][1]);   // 2d list.
 	}
-	// walking the data structure with embeded code:
+	// Walking the data structure with the previously embedded code:
 	printf("Data structure value: %.2f\n",st.a2);	
 
  	printf("Code routine Handling\n"
