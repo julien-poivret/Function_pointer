@@ -30,7 +30,7 @@ typedef int (*Callbck_t)(int);
 	         function_name , (int)
 */
 int interrupt_routine(Callbck_t funct,int input){
-	//possible additional api config.
+	// here possible additional code config.
 	return funct(input);
 };
 
