@@ -7,12 +7,12 @@
 */
 
 /*
-  This technic is a practical way to store code variations in a data structure     
+  This technic is a practical way to store user code variations in a data structure     
     possibly configured by a fonction for this effect and run by another one.      
   
   And so, c++ class, method and constructor can be conveniently substitued by 
     a simple prefix in the function name family at declaration c is a powerfull
-    language system.
+    language system but can do Application User Interface too.
  */
 
 // A way to do Boolean in c.
