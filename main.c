@@ -43,25 +43,34 @@ typedef int (*Callbck_t)(int);
 
 */
 int interrupt_routine(Callbck_t funct,int input){
-	//...some possible additional code config there...
 	return funct(input);
 };
 
    
 /* 
-  Different codes to "inject" in the interrupt routine.
-  
-      -> prefix "inline" speed up short function definition 
-         like the one following at compile time by reducing 
-         long "memory jump" when function call. (good notion to have...)
-      -> but "broke" the storage in data structure !
-	 
+  Function pointer is usefull for API internal standard
+  when a programer wich to inject it's own code between fixed 
+  api inputs / output.
 */
 inline int generic_CodeA(int value){
+	//...some possible additional code config there...
 	return (value+3); 
 };
+/*
+    -> prefix "inline" speed up short function definition 
+       like the one following at compile time by replacing 
+       long "memory jump" when function call by short asm instructions. 
+       (good notion to have...)
+    -> but "broke" the storage in data structure (with fwrite),
+       since only a memory address can be fix in size,
+       consecutive inlined assembly instructions at compile time 
+       would involve to store an undifined number of asm instructions in
+       the data structure the size would not be possible to know by advance
+       for making a user config file.
+*/
 
 int generic_CodeB(int value){
+	//...some possible additional code config there...
 	return (value+5); 
 };
 
@@ -70,13 +79,15 @@ struct data{
 	double a1;
 	double a2;
 	char name[20];
-	Callbck_t runtime_code; // this is stupid, the memory adress point on something valid 
+	Callbck_t runtime_code; // this may be stupid, the memory adress point on something valid 
 };                              // ONLY for this runtime meaning that if you attempt to read 
                                 // the next time a file with this struct in another runtime 
                                 // the memory adrress will not be valid anymore,
                                 // since the os will allocate the stack/heap in another active 
                                 // region of the sdram ... 
                                 // i made this mistake ;{ a shame... but very instructive.
+                                // But work well if you dont save the struct on a file.
+                               
 
 // Classic main function entry.
 int main(int argc,char* argv[]){
