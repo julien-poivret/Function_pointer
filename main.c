@@ -3,8 +3,7 @@
 #include <unistd.h>
 
 /*
-    Quick and simple fundammantal 
-    for advanced coding in C.
+    Quick and simple fundammantal for advanced coding in C.
 */
 
 /*
