@@ -74,13 +74,13 @@ int main(int argc,char* argv[]){
         struct data st ={.a2=3.141590};
 	st.runtime_code = generic_CodeB; // Code storage.
 	
-	// in file nade boolean.
+	// In "file Made" boolean.
 	bool check = false;
 	
-	//2d list or pointer* on pointer*
+	// 2d list ( or pointer* on pointer* ).
 	char test[10][5]={"Bonj","","Aure"};
 	
-        // exemple code for walking 2d list.
+        // Code for walking the 2d list narmal/"raw way".
 	if(check == false ){
 		write(1,"Pointer on Pointer:\n",20);
 		printf("%s\n",(*(test+2)));                         // Raw pointer
