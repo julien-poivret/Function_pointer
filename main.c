@@ -65,12 +65,17 @@ struct data{
 // Classic main runtime c entry.
 int main(int argc,char* argv[]){
 	
+	// structure initialization.
         struct data st ={.a2=3.141590};
 	st.runtime_code = generic_CodeB; // Code storage.
 	
+	// in file nade boolean.
 	bool check = false;
+	
+	//2d list or pointer* on pointer*
 	char test[10][5]={"Bonj","","Aure"};
-
+	
+        // exemple code for walking 2d list.
 	if(check == false ){
 		write(1,"Pointer on Pointer:\n",20);
 		printf("%s\n",(*(test+2)));                         // Raw pointer
@@ -78,7 +83,7 @@ int main(int argc,char* argv[]){
 		printf("Char 1 and 2 of the third item: %c,%c\n",
 		                          test[2][0],test[2][1]);   // 2d list.
 	}
-	
+	// walking the data structure with embeded code:
 	printf("Data structure value: %.2f\n",st.a2);	
 
  	printf("Code routine Handling\n"
@@ -89,7 +94,7 @@ int main(int argc,char* argv[]){
 	
 	
 	
-	// Open a stream and save data structure on disk in a .jp format.
+	// Open a stream and save data structure on physical disk in an arbitrary '.jp' format.
 	FILE* fd = fopen("./myfile.jp","w+");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
@@ -97,8 +102,8 @@ int main(int argc,char* argv[]){
 		}
 	fwrite(&st,sizeof(st),1,fd); // Write
 	fclose(fd); 
-        // Open the .jp file format and run the stored code.
-	// ( possibly generated from another computer and recived by email... )
+        // Open the '.jp' file coresponding to the architecture of the data structure and run the stored code.
+	//     ( possibly a one generated from another computer and recived by email in .jp format ... )
 	fd = fopen("./myfile.jp","r");
         if( fd == NULL ){
 		fprintf(stderr,"Error while reading! "
