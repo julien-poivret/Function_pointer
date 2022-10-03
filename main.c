@@ -62,11 +62,11 @@ struct data{
 	Callbck_t runtime_code;
 };
 
-// Runtime.
+// Classic main runtime c entry.
 int main(int argc,char* argv[]){
 	
         struct data st ={.a2=3.141590};
-	st.runtime_code = generic_CodeB; // code storage.
+	st.runtime_code = generic_CodeB; // Code storage.
 	
 	bool check = false;
 	char test[10][5]={"Bonj","","Aure"};
@@ -89,16 +89,16 @@ int main(int argc,char* argv[]){
 	
 	
 	
-	//  open a stream and save data structure on disk in a .jp format.
+	// Open a stream and save data structure on disk in a .jp format.
 	FILE* fd = fopen("./myfile.jp","w+");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
                 exit(EXIT_FAILURE);
 		}
-	fwrite(&st,sizeof(st),1,fd); // write
+	fwrite(&st,sizeof(st),1,fd); // Write
 	fclose(fd); 
-        // open the .jp file format and run the stored code.
-	// possibly generated from another computer and recived by email.
+        // Open the .jp file format and run the stored code.
+	// ( possibly generated from another computer and recived by email... )
 	fd = fopen("./myfile.jp","r");
         if( fd == NULL ){
 		fprintf(stderr,"Error while reading! "
@@ -106,7 +106,7 @@ int main(int argc,char* argv[]){
                 exit(EXIT_FAILURE);
 		}
 	struct data st_read;
-	fread(&st_read,sizeof(st),1,fd); // read
+	fread(&st_read,sizeof(st),1,fd); // Read
 	fclose(fd); 
 	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10));
 	
