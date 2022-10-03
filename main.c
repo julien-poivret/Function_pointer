@@ -12,7 +12,7 @@
   
   And so, c++ class, method and constructor can be conveniently substitued by 
     a simple prefix in the function name family at declaration.
-    c is a powerfull language system but can do Application User Interface too.
+    C is a powerfull language system but can do Application User Interface too.
     -> now a function pointer can take variations of algorithm by having a different code 
     within a given input/output format that's a system file. 
     "see fwrite function in C for storing data structure in a file. 
