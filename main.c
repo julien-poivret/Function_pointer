@@ -3,10 +3,8 @@
 #include <unistd.h>
 
 /*
-    Quick and simple fundammantal for advanced coding in C.
-*/
-
-/*
+  Quick and simple fundammantal for advanced coding in C.
+    
   This technic is a practical way to store user code variations in a data structure     
     possibly configured by a fonction for this effect and run by another one.      
   
