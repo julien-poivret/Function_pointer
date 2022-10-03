@@ -74,7 +74,7 @@ int main(int argc,char* argv[]){
         struct data st ={.a2=3.141590};
 	st.runtime_code = generic_CodeB; // Code storage.
 	
-	// In "file Made" boolean.
+	// In "file Made" boolean (from typedef).
 	bool check = false;
 	
 	// 2d list ( or pointer* on pointer* ).
