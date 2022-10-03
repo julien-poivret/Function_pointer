@@ -14,9 +14,9 @@
     a simple prefix in the function name family at declaration.
     C is a powerfull language system but can also do Application User Interface too.
     -> now a function pointer can take variations of algorithm by having a different code 
-    within a given input/output format that's a system file. 
-    "see fwrite function in C for storing data structure in a file. 
-    and chose your own extention format before writing on disk neat! no ?"
+    within a given input/output function format that's a system file. 
+    "see fwrite function in C" for storing data structure in a file 
+    and choose your own extention format before writing on disk neat! no ?
  */
 
 // A way to do Boolean in c.
