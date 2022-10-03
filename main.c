@@ -3,6 +3,9 @@
 #include <unistd.h>
 
 /*
+  
+  Poivret Julien Oct 3 2022 poivretjulien@gmail.com
+  
            Quick and simple fundammantal for advanced coding in C. 
     
   This technic is a practical way to store user code variations in a data structure     
