@@ -108,7 +108,7 @@ int main(int argc,char* argv[]){
                 exit(EXIT_FAILURE);
 		}
 	fwrite(&st,sizeof(st),1,fd); // Write
-	fclose(fd); 
+	fclose(fd); // close stream.
         // Open the '.jp' file coresponding to the architecture of the data structure and run the stored code.
 	//     ( possibly a one generated from another computer and recived by email in .jp format ... )
 	fd = fopen("./myfile.jp","r");
@@ -117,9 +117,9 @@ int main(int argc,char* argv[]){
 			       ",a file was supposed to be there !");
                 exit(EXIT_FAILURE);
 		}
-	struct data st_read;
-	fread(&st_read,sizeof(st),1,fd); // Read
-	fclose(fd); 
+	struct data st_read;             // Structure definition on ram.
+	fread(&st_read,sizeof(st),1,fd); // Read from disk & store on ram.
+	fclose(fd);  // close stream.
 	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10));
 	
 	return EXIT_SUCCESS;
