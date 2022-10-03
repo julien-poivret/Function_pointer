@@ -12,7 +12,8 @@
     possibly configured by a fonction for this effect and run by another one.      
   
   And so, c++ class, method and constructor can be conveniently substitued by 
-    a simple prefix in the function name family at declaration.
+    a simple prefix in the function name family at declaration c is a powerfull
+    language system.
  */
 
 // A way to do Boolean in c.
