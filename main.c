@@ -16,7 +16,7 @@
  */
 
 //A way to do Boolean in c.
-typedef char bool; // ( take 8 bits, for readabillity...) 
+typedef char bool; // ( take 8 bits, for readability...) 
 #define true 1
 #define false 0
 
