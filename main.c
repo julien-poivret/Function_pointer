@@ -88,7 +88,7 @@ int main(int argc,char* argv[]){
 	
 	
 	
-	//  open a file and save data structure on disk in a .jp format.
+	//  open a stream and save data structure on disk in a .jp format.
 	FILE* fd = fopen("./myfile.jp","w+");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
@@ -96,12 +96,12 @@ int main(int argc,char* argv[]){
 		}
 	fwrite(&st,sizeof(st),1,fd);
 	fclose(fd); 
-        // open file format and run the stored code.
+        // open the .jp file format and run the stored code.
 	// possibly generated from another computer and recived by email.
 	fd = fopen("./myfile.jp","r");
         if( fd == NULL ){
 		fprintf(stderr,"Error while reading! "
-			       ",a file is suposed to be there !");
+			       ",a file was supposed to be there !");
                 exit(EXIT_FAILURE);
 		}
 	struct data st_read;
