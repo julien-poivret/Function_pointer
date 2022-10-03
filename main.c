@@ -54,7 +54,7 @@ struct data{
 
 // Runtime.
 int main(int argc,char* argv[]){
-  struct data st ={.a2=3.141570};
+        struct data st ={.a2=3.141570};
 	bool check = false;
 	char test[10][5]={"Bonj","","Aure"};
 
