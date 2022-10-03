@@ -15,7 +15,7 @@
     a simple prefix in the function name family at declaration.
  */
 
-//A way to do Boolean in c.
+// A way to do Boolean in c.
 typedef char bool; // ( take 8 bits, for readability...) 
 #define true 1
 #define false 0
