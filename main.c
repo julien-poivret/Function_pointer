@@ -41,7 +41,7 @@ typedef int (*Callbck_t)(int);
 
 */
 int interrupt_routine(Callbck_t funct,int input){
-	// here possible additional code config.
+	//...some possible additional code config there...
 	return funct(input);
 };
 
@@ -71,24 +71,24 @@ struct data{
 	Callbck_t runtime_code;
 };
 
-// Classic main runtime c entry.
+// Classic main function entry.
 int main(int argc,char* argv[]){
 	
-	// Structure initialization.
+	// Data structure initialization.
         struct data st ={.a2=3.141590};
-	st.runtime_code = generic_CodeB; // Code storage.
+	st.runtime_code = generic_CodeB; // Code storage. 
 	
-	// In "file Made" boolean (from typedef).
+	// In "file Made" boolean ( from above typedef ).
 	bool check = false;
 	
 	// 2d list ( or pointer* on pointer* ).
-	char test[10][5]={"Bonj","","Aure"};
+	char test[3][5]={"Bonj","","Aure"};
 	
-        // Code for walking the 2d list narmal/"raw way".
+        // Code for walking the 2d list normal and "raw way".
 	if(check == false ){
 		write(1,"Pointer on Pointer:\n",20);
-		printf("%s\n",(*(test+2)));                         // Raw pointer
-		printf("%s\n",test[2]);                             // Classic list
+		printf("Raw way: %s\n",(*(test+2)));                // Raw pointer
+		printf("Classic way: %s\n",test[2]);                // Classic list
 		printf("Char 1 and 2 of the third item: %c,%c\n",
 		                          test[2][0],test[2][1]);   // 2d list.
 	}
