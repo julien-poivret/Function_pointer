@@ -49,7 +49,7 @@ inline int generic_CodeA(int value){
 	return (value+3); 
 };
 
-inline int generic_CodeB(int value){
+int generic_CodeB(int value){
 	return (value+5); 
 };
 
