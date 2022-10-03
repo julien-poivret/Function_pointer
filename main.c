@@ -135,10 +135,9 @@ int main(int argc,char* argv[]){
 			       ",a file was supposed to be there !");
                 exit(EXIT_FAILURE);
 		}
-	struct data* st_read = calloc(sizeof(st));             // Structure definition on ram.
-	fread(st_read,sizeof(st),1,fd);                        // Read from disk & store on ram.
+	struct data st_read;                                   // Structure definition on stack memory (ram)
+	fread(&st_read,sizeof(st),1,fd);                       // Read from disk & store on stack.
 	fclose(fd);                                            // close stream.
-	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read->runtime_code)(10)); //!! only valid for this runtime.
-	free(st_read);                                         // free ram region from heap.
+	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10)); //!! only valid for this runtime.
 	return EXIT_SUCCESS;
 }
