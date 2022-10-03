@@ -63,7 +63,10 @@ struct data{
 
 // Runtime.
 int main(int argc,char* argv[]){
+	
         struct data st ={.a2=3.141570};
+	st.runtime_code = generic_CodeB; // code storage.
+	
 	bool check = false;
 	char test[10][5]={"Bonj","","Aure"};
 
@@ -82,5 +85,28 @@ int main(int argc,char* argv[]){
 	               "Result of code B ->%d\n",
 	               interrupt_routine(generic_CodeA,10),
 	               interrupt_routine(generic_CodeB,10));
+	
+	
+	
+	//  open a file and save data structure on disk in a .jp format.
+	FILE* fd = fopen("./myfile.jp","w+");
+	if( fd == NULL ){
+		fprintf(stderr,"Error,cant openfile there.");
+                exit(EXIT_FAILURE);
+		}
+	fwrite(&st,sizeof(st),1,fd);
+	fclose(fd); 
+        // open file format and run the stored code.
+	// possibly generated from another computer and recived by email.
+	fd = fopen("./myfile.jp","r");
+        if( fd == NULL ){
+		fprintf(stderr,"Error while reading! "
+			       ",a file is suposed to be there !");
+                exit(EXIT_FAILURE);
+		}
+	struct data st_read;
+	fread(&st_read,sizeof(st),1,fd);
+	fclose(fd); 
+	printf("Data read code previously store in file.jp :%d\n",(st_read.runtime_code)(10));
 	return EXIT_SUCCESS;
 }
