@@ -86,7 +86,7 @@ struct data{
                                 // But work well if you don't save the struct on a file
                                 // for being read in another runtime... ...still the only way 
                                 // to control yourself the swap of your memory ( and dont let the OS 
-                                // doing this at it's rate... )
+                                // doing this at it's own rate... )
                                  
                                
 
