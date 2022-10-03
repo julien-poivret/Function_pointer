@@ -52,6 +52,7 @@ struct data{
 	double a1;
 	double a2;
 	char name[20];
+	Callbck_t runtime_code;
 };
 
 // Runtime.
