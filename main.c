@@ -67,10 +67,10 @@ int main(int argc,char* argv[]){
 
 	if(check == false ){
 		write(1,"Pointer on Pointer:\n",20);
-		printf("%s\n",(*(test+2)));             // Raw pointer
-		printf("%s\n",test[2]);                 // Classic list
+		printf("%s\n",(*(test+2)));                         // Raw pointer
+		printf("%s\n",test[2]);                             // Classic list
 		printf("Char 1 and 2 of the third item: %c,%c\n",
-		                          test[2][0],test[2][1]);// 2d list.
+		                          test[2][0],test[2][1]);   // 2d list.
 	}
 	
 	printf("Data structure value: %.2f\n",st.a2);	
