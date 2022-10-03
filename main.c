@@ -4,7 +4,7 @@
 
 /*
   
-  Poivret Julien Oct 3 2022 poivretjulien@gmail.com.
+  Poivret Julien Oct 3 2022 poivretjulien@gmail.com
   
            Quick and simple fundammantal for advanced coding in C. 
     
