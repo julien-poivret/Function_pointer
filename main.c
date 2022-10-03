@@ -22,7 +22,7 @@ typedef char bool; // ( take 8 bits, for readability...)
 #define true 1
 #define false 0
 
-// Definition of function pointer of type Callbck_t.
+// Definition of function pointer of arbitrary type: Callbck_t.
 typedef int (*Callbck_t)(int);
 
 /* 	   
