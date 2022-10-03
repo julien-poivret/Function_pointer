@@ -28,7 +28,7 @@ typedef int (*Callbck_t)(int);
 	 all API user code configuration with 
 	 in a given format claim by the API:
 	   
-		 *take a function pointer, pointing on a:
+           *take a function pointer, pointing on a:
 	         int function_name(int value_name);
 	   *in a shape of:
 	         function_name , (int)
