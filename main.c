@@ -94,7 +94,7 @@ int main(int argc,char* argv[]){
 	
 	// Data structure initialization.
         struct data st ={.a2=3.141590};
-	st.runtime_code = generic_CodeB; // Code storage. 
+	st.runtime_code = generic_CodeB; // pointer adress storage. (!! valid only for this runtime. !!) 
 	
 	// In "file Made" boolean ( from above typedef ).
 	bool check = false;
@@ -119,7 +119,9 @@ int main(int argc,char* argv[]){
 	               interrupt_routine(generic_CodeA,10),
 	               interrupt_routine(generic_CodeB,10));
 	
-	// Open a stream and save data structure on physical disk in an arbitrary '.jp' format.
+	// Open a stream and save the data structure on a physical disk in an arbitrary '.jp' format.
+	// can be usefull for storing allocated memory on ram, before to free the ram previously allocated by os
+	// and so deal with an huge amount of data without crashing the computer that a swap memory.
 	FILE* fd = fopen("./myfile.jp","w+b");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
