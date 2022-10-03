@@ -13,7 +13,7 @@
   
   And so, c++ class, method and constructor can be conveniently substitued by 
     a simple prefix in the function name family at declaration.
-*/
+ */
 
 //A way to do Boolean in c.
 typedef char bool; // ( take 8 bits, for readabillity...) 
