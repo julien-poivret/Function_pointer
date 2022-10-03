@@ -101,8 +101,6 @@ int main(int argc,char* argv[]){
 	               interrupt_routine(generic_CodeA,10),
 	               interrupt_routine(generic_CodeB,10));
 	
-	
-	
 	// Open a stream and save data structure on physical disk in an arbitrary '.jp' format.
 	FILE* fd = fopen("./myfile.jp","w+");
 	if( fd == NULL ){
