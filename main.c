@@ -120,7 +120,7 @@ int main(int argc,char* argv[]){
 	               interrupt_routine(generic_CodeB,10));
 	
 	// Open a stream and save data structure on physical disk in an arbitrary '.jp' format.
-	FILE* fd = fopen("./myfile.jp","w+");
+	FILE* fd = fopen("./myfile.jp","w+b");
 	if( fd == NULL ){
 		fprintf(stderr,"Error,cant openfile there.");
                 exit(EXIT_FAILURE);
@@ -129,7 +129,7 @@ int main(int argc,char* argv[]){
 	fclose(fd); // close stream.
         // Open the '.jp' file coresponding to the architecture of the data structure and run the stored struct data.
 	//     ( possibly a one generated from another computer and recived by email in .jp format ... )
-	fd = fopen("./myfile.jp","r");
+	fd = fopen("./myfile.jp","rb");
         if( fd == NULL ){
 		fprintf(stderr,"Error while reading! "
 			       ",a file was supposed to be there !");
