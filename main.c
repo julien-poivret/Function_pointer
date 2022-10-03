@@ -84,6 +84,7 @@ struct data{
                                 // region of the sdram ... 
                                 // i made this mistake ;{ a shame... but very instructive.
                                 // But work well if you dont save the struct on a file.
+                                // for being read in another runtime. (this code compile and work well)  
                                
 
 // Classic main function entry.
