@@ -74,7 +74,7 @@ struct data{
 // Classic main runtime c entry.
 int main(int argc,char* argv[]){
 	
-	// structure initialization.
+	// Structure initialization.
         struct data st ={.a2=3.141590};
 	st.runtime_code = generic_CodeB; // Code storage.
 	
