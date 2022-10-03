@@ -17,8 +17,10 @@
     C is a powerfull language system but can also do Application User Interface too.
     -> now a function pointer can take variations of algorithm, by having a different code 
     within a given input/output function entry format, this could be a system file ! 
-    "see fwrite function in C" for storing data structure in a file 
+    "see fwrite/fread function in C" for storing data structure in a file 
     and choose your own extention format before writing/reading on disk neat! no ?
+    ( !! only values must be set on a struct when you plane to store the structure in a config file !! )
+    ( pointer would lead to segmentation fault in the next runtime. )  
  */
 
 // A way to do Boolean in c.
@@ -68,8 +70,13 @@ struct data{
 	double a1;
 	double a2;
 	char name[20];
-	Callbck_t runtime_code;
-};
+	Callbck_t runtime_code; // this is stupid, the memory adress point on something valid 
+};                              // ONLY for this runtime meaning that if you attempt to read 
+                                // the next time a file with this struct in another runtime 
+                                // the memory adrress will not be valid anymore,
+                                // since the os will allocate the stack/heap in another active 
+                                // region of the sdram ... 
+                                // i made this mistake ;{ a shame... but very instructive.
 
 // Classic main function entry.
 int main(int argc,char* argv[]){
@@ -109,7 +116,7 @@ int main(int argc,char* argv[]){
 		}
 	fwrite(&st,sizeof(st),1,fd); // Write
 	fclose(fd); // close stream.
-        // Open the '.jp' file coresponding to the architecture of the data structure and run the stored code.
+        // Open the '.jp' file coresponding to the architecture of the data structure and run the stored struct data.
 	//     ( possibly a one generated from another computer and recived by email in .jp format ... )
 	fd = fopen("./myfile.jp","r");
         if( fd == NULL ){
@@ -117,10 +124,10 @@ int main(int argc,char* argv[]){
 			       ",a file was supposed to be there !");
                 exit(EXIT_FAILURE);
 		}
-	struct data st_read;             // Structure definition on ram.
-	fread(&st_read,sizeof(st),1,fd); // Read from disk & store on ram.
-	fclose(fd);  // close stream.
-	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10));
-	
+	struct data* st_read = calloc(sizeof(st));             // Structure definition on ram.
+	fread(st_read,sizeof(st),1,fd);                        // Read from disk & store on ram.
+	fclose(fd);                                            // close stream.
+	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read->runtime_code)(10)); //!! only valid for this runtime.
+	free(st_read);                                         // free ram region from heap.
 	return EXIT_SUCCESS;
 }
