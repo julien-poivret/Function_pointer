@@ -26,10 +26,15 @@ typedef char bool; // ( take 8 bits, for readability...)
 typedef int (*Callbck_t)(int);
 
 /* 	   
-           *take a function pointer, pointing on a:
-	         int function_name(int value_name);
-	   *in a shape of:
-	         function_name , (int)
+
+   *take a function pointer, pointing on a:
+
+                 int function_name(int value_name);
+   
+   *in a shape of:
+	         
+		 function_name , (int)
+
 */
 int interrupt_routine(Callbck_t funct,int input){
 	// here possible additional code config.
