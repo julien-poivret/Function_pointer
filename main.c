@@ -16,7 +16,7 @@
     -> now a function pointer can take variations of algorithm by having a different code 
     within a given input/output format that's a system file. 
     "see fwrite function in C for storing data structure in a file. 
-    and chose your extention format before writing on disk neat! no ?"
+    and chose your own extention format before writing on disk neat! no ?"
  */
 
 // A way to do Boolean in c.
