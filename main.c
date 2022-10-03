@@ -7,6 +7,13 @@
     for advanced coding in C.
 */
 
+/*
+  This technic is a practical way to store code variations in a data structure     
+    possibly configured by a fonction for this effect and run by another one.      
+    and so, c++ class, method, and constructor can be easly substitued by 
+    a simple prefix in the function name family conveniently.
+*/
+
 // Boolean.
 typedef char bool;
 #define true 1
