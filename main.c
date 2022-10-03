@@ -65,7 +65,7 @@ struct data{
 // Runtime.
 int main(int argc,char* argv[]){
 	
-        struct data st ={.a2=3.141570};
+        struct data st ={.a2=3.141590};
 	st.runtime_code = generic_CodeB; // code storage.
 	
 	bool check = false;
