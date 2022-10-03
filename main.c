@@ -42,7 +42,8 @@ int interrupt_routine(Callbck_t funct,int input){
   
       -> prefix "inline" speed up short function definition 
          like the two following at compile time by reducing 
-         long "memory jump" at function call.
+         long "memory jump" at function call. (good notion to have)
+      -> but "broke" the storage in data structure !
 	 
 */
 inline int generic_CodeA(int value){
