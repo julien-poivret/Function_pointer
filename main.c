@@ -71,7 +71,7 @@ int main(int argc,char* argv[]){
  	printf("Code routine Handling\n"
 	               "Result of code A ->%d\n"
 	               "Result of code B ->%d\n",
-	                       interrupt_routine(generic_CodeA,10),
-												 interrupt_routine(generic_CodeB,10));
+	               interrupt_routine(generic_CodeA,10),
+	               interrupt_routine(generic_CodeB,10));
 	return EXIT_SUCCESS;
 }
