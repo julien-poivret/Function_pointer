@@ -12,7 +12,7 @@ typedef char bool;
 #define true 1
 #define false 0
 
-// Function pointer of type Callback_type.
+// Function pointer of type Callbck_t.
 typedef int (*Callbck_t)(int);
 
 /* 
