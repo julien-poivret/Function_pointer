@@ -35,12 +35,19 @@ int interrupt_routine(Callbck_t funct,int input){
 };
 
    
-// Different codes to "inject" in the interrupt routine.
-int generic_CodeA(int value){
+/* 
+  Different codes to "inject" in the interrupt routine.
+  
+      -> prefix "inline" speed up short function definition 
+         like the two following at compile time by reducing 
+         long "memory jump" at function call.
+	 
+*/
+inline int generic_CodeA(int value){
 	return (value+3); 
 };
 
-int generic_CodeB(int value){
+inline int generic_CodeB(int value){
 	return (value+5); 
 };
 
