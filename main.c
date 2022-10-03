@@ -76,15 +76,18 @@ struct data{
 	double a1;
 	double a2;
 	char name[20];
-	Callbck_t runtime_code; // this may be stupid, the memory adress point on something valid 
-};                              // ONLY for this runtime meaning that if you attempt to read 
-                                // the next time a file with this struct in another runtime 
-                                // the memory adrress will not be valid anymore,
-                                // since the os will allocate the stack/heap in another active 
-                                // region of the sdram ... 
-                                // i made this mistake ;{ a shame... but very instructive.
-                                // But work well if you dont save the struct on a file.
-                                // for being read in another runtime. (this code compile and work well)  
+	Callbck_t runtime_code; // This may be stupid, the memory adress point on something valid 
+};                              // ONLY for this runtime, meaning that if you attempt to read 
+                                // the next time a file with this struct,in another runtime 
+                                // the memory adrress will not be valid anymore...
+                                // Since the os will allocate the stack/heap in another active 
+                                // region of the SDRAM ... 
+                                // i made this mistake ;{ a shame... but very instructive at least...
+                                // But work well if you don't save the struct on a file
+                                // for being read in another runtime... ...still the only way 
+                                // to control yourself the swap of your memory ( and dont let the OS 
+                                // doing this at his rate... )
+                                 
                                
 
 // Classic main function entry.
