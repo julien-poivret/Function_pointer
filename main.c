@@ -174,10 +174,10 @@ int main(int argc,char* argv[]){
 	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10)); //!! only valid for this runtime.
 	
 	
-	char passwd[8] ="LOOPING";                          // password in clear text (always one char of more for length ('\0') at the end.)
-        str_Mask(4,(char*) passwd,7,0);                     // encrypt the password 
+	char passwd[7] ="Julien";                           // password in clear text (always one char of more for length ('\0') at the end.)
+        str_Mask(4,(char*) passwd,6,0);                     // encrypt the password 
         printf("%s\n",passwd);                              // print encrypted password   (!!! at this stage it's can be save on file !!!)
-        str_Mask(4,(char*) passwd,7,1);                     // decrypt password
+        str_Mask(4,(char*) passwd,6,1);                     // decrypt password
         printf("%s\n",passwd);                              // print decrypted password on console.
 	return EXIT_SUCCESS;
 }
