@@ -104,7 +104,11 @@ void str_Mask(int seed,char* str,int nBytes,int dirFlag){
     Direction=-1;
   }else if(dirFlag == 0){
     Direction=1;
-  }
+  }else(
+    fprintf(stderr,"error ! Wrong dirFlag value 1 or 0");
+    free(buffer);
+    exit(EXIT_FAILURE);
+  )
   for (int i=0;i<nBytes;i++){
     if(i<(nBytes/2)){
       *(str+(i))=*(buffer+i) + (seed*Direction);
