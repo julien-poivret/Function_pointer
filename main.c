@@ -88,7 +88,32 @@ struct data{
                                 // to control yourself the swap of your memory ( and dont let the OS 
                                 // doing this at it's own rate... )
                                  
-                               
+
+/*
+  Weak way to encrypt/decrypt text data in file.
+  but, you may take a while to reverse the string
+  if you dont have the code and settings.
+*/
+void str_Mask(int seed,char* str,int nBytes,int dirFlag){
+  char* buffer = calloc(nBytes,sizeof(char));
+  for(int i=0;i<nBytes;i++){
+    *(buffer+i)=*(str+i);
+  }
+  int Direction;
+  if(dirFlag == 1){
+    Direction=-1;
+  }else if(dirFlag == 0){
+    Direction=1;
+  }
+  for (int i=0;i<nBytes;i++){
+    if(i<(nBytes/2)){
+      *(str+(i))=*(buffer+i) + (seed*Direction);
+    }else{
+      *(str+(i))=*(buffer+i) + (seed*Direction);
+    }
+  }
+  free(buffer);
+}                      
 
 // Classic main function entry.
 int main(int argc,char* argv[]){
@@ -143,5 +168,12 @@ int main(int argc,char* argv[]){
 	fread(&st_read,sizeof(st),1,fd);                       // Read from disk & store on stack.
 	fclose(fd);                                            // close stream.
 	printf("Data read from code previously stored in \"myfile.jp\" :%d\n",(st_read.runtime_code)(10)); //!! only valid for this runtime.
+	
+	
+	char passwd[8] ="LOOPING";                          // password in clear text (always one char of more for length ('\0') at the end.)
+        str_Mask(4,(char*) passwd,7,0);                     // encrypt the password 
+        printf("%s\n",passwd);                              // print encrypted password   (!!! at this stage it's can be save on file !!!)
+        str_Mask(4,(char*) passwd,7,1);                     // decrypt password
+        printf("%s\n",passwd);                              // print decrypted password on console.
 	return EXIT_SUCCESS;
 }
